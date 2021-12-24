@@ -97,12 +97,14 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
         List<BoekingsOverzicht> reserveringVoor = new ArrayList<>();
 
         // Voer hier je query in
-        String sql = "SELECT reservering.aankomstdatum, reservering.vertrekdatum, reservering.betaald, reservering.accommodatiecode, reservering.reizigers_code, accommodatie.naam, accommodatie.stad, accommodatie.land, accommodatie.soort, reiziger.voornaam, reiziger.achternaam, reiziger.plaats\n" +
-                "FROM ((reservering\n" +
-                "INNER JOIN accommodatie\n" +
-                "ON reservering.accommodatiecode = accommodatie.accommodatie_code)\n" +
-                "INNER JOIN reiziger\n" +
-                "ON reservering.reizigers_code = reiziger.reizigers_code) WHERE reservering.reizigers_code = ?";
+        String sql = "SELECT `reservering`.`aankomstdatum`, `reservering`.`vertrekdatum`, `reservering`.`betaald`, `reservering`.`accommodatiecode`, " +
+                "`reservering`.`reizigers_code`, `accommodatie`.`naam`, `accommodatie`.`stad`, `accommodatie`.`land`, `accommodatie`.`soort`, `reiziger`.`voornaam`, " +
+                "`reiziger`.`achternaam`, `reiziger`.`plaats`\n" +
+                "FROM ((`reservering`\n" +
+                "INNER JOIN `accommodatie`\n" +
+                "ON `reservering`.`accommodatiecode` = `accommodatie`.`accommodatie_code`)\n" +
+                "INNER JOIN `reiziger`\n" +
+                "ON `reservering`.`reizigers_code` = `reiziger`.`reizigers_code`) WHERE `reservering`.`reizigers_code` = ?";
 
 
         try {
@@ -219,7 +221,7 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
         if (reizigerscode != null) {
 
             // Haal de reiziger op
-            String sql = "SELECT * from reiziger WHERE reizigers_code = ?";
+            String sql = "SELECT * from `reiziger` WHERE `reizigers_code` = ?";
 
             // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
             if (sql.equals(""))

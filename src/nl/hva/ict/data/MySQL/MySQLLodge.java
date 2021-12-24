@@ -33,7 +33,7 @@ public class MySQLLodge extends MySQL<Lodge> {
     private void load() {
 
         // Voer hier je SQL code in
-        String sql = "SELECT * FROM accommodatie INNER JOIN lodge ON accommodatie.accommodatie_code = lodge.accommodatie_code WHERE accommodatie.soort = 'lodge'";
+        String sql = "SELECT * FROM `accommodatie` INNER JOIN `lodge` ON `accommodatie`.`accommodatie_code` = `lodge`.`accommodatie_code` WHERE `accommodatie`.`soort` = 'lodge'";
 
         // Als je nog geen query hebt ingevuld breek dan af om een error te voorkomen.
         if (sql.equals(""))
