@@ -11,8 +11,6 @@ import java.util.Arrays;
 import java.util.List;
 import static com.mongodb.client.model.Aggregates.match;
 import static com.mongodb.client.model.Filters.eq;
-import static java.lang.Double.*;
-import static java.lang.Integer.*;
 
 /**
  * Landen informatie ophalen van de MongoDB
@@ -230,9 +228,9 @@ public class MongoLandeninformatie extends MongoDB {
                                         .append("_id", 0L))))
                 .into(new ArrayList<>());
 
-        System.out.println(results.get(0).get("population"));
+//        System.out.println(results.get(0).get("population"));
 
-        String getal2 =  results.get(0).get("population").toString();
-        return new BigDecimal(getal2).intValue();
+        String totalPopulation =  results.get(0).get("population").toString();
+        return new BigDecimal(totalPopulation).intValue();
     }
 }

@@ -50,9 +50,9 @@ public class LandeninformatieController extends Controller {
             } else if (selectedItem == vragen[2]) {
                 MainApplication.getMongoLandenInformatie().waarBetaalJeMet("Euro", alleenAfrika);
             } else if (selectedItem == vragen[3]) {
-                MainApplication.getMongoLandenInformatie().welkeLandenZijnErIn("west-europe");
+                MainApplication.getMongoLandenInformatie().welkeLandenZijnErIn("Western Europe");
             } else if (selectedItem == vragen[4]) {
-                MainApplication.getMongoLandenInformatie().welkeLandenZijnErIn("afrika");
+                MainApplication.getMongoLandenInformatie().welkeLandenZijnErIn("Africa");
             } else if (selectedItem == vragen[5]) {
                 int totaalInwoners = MainApplication.getMongoLandenInformatie().hoeveelInwonersOostAfrika();
                 landenInformatieView.getTextArea().setText("Er wonen in Oost- Afrika in totaal " + totaalInwoners + " inwoners");
